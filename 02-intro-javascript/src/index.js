@@ -143,3 +143,11 @@ setNombre(); */
 // ======================================================================
 // Seccion 3 => Import, export y funciones comunes de arreglos
 // ======================================================================
+
+import { heroes } from './data/heroes';
+
+const getHeroeById = (id) => {
+    return heroes.find( el => el.id === id );
+}
+
+console.log(getHeroeById(1));
