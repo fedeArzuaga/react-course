@@ -144,10 +144,99 @@ setNombre(); */
 // Seccion 3 => Import, export y funciones comunes de arreglos
 // ======================================================================
 
-import { heroes } from './data/heroes';
+// import { heroes } from './data/heroes';
 
-const getHeroeById = (id) => {
-    return heroes.find( el => el.id === id );
+// const getHeroeById = (id) => {
+//     return heroes.find( el => el.id === id );
+// }
+
+// const getHeroeByOwner = owner => {
+//     return heroes.filter( el => el.owner === owner );
+// }
+
+// console.log(getHeroeById(1));
+// console.log(getHeroeByOwner('DC'));
+// console.log(owners);
+
+// ======================================================================
+// Seccion 3 => Promesas
+// ======================================================================
+
+// const promesa = new Promise( (resolve, reject) => {  
+//     setTimeout( () => {
+//         const heroe = getHeroeById(2);
+//         console.log(heroe);
+//         resolve( heroe );
+//         reject( 'No se pudo encontrar el héroe' );
+//     }, 2000 )
+// })
+
+// promesa
+//     .then( ( heroe ) => {
+//         console.log('Heroe recibido: ', heroe);
+//     } )
+//     .catch( ( error ) => {
+//         console.error( error )
+//     } )
+
+// const getHeroeByIdAsync = (id) => {
+
+//     return new Promise( (resolve, reject) => {  
+//         setTimeout( () => {
+//             const heroe = getHeroeById(id);
+            
+//             if( heroe ) {
+//                 resolve( heroe );
+//             }else{
+//                 reject( 'No se pudo encontrar el héroe' );
+//             }
+
+//         }, 2000 )
+//     })
+
+// }
+
+// getHeroeByIdAsync(5)
+//     .then( console.log )
+//     .catch( console.error )
+
+// ======================================================================
+// Seccion 3 => Fetch API
+// ======================================================================
+
+// const apiKey = 'l8Th4RQ5OLAN5qMc4EViivT4NWPFMOiX';
+
+// const peticion = fetch(`http://api.giphy.com/v1/gifs/random?api_key=${apiKey}`);
+
+// peticion
+//     .then( resp => resp.json() )
+//     .then( ({data}) => {
+//         const { url } = data.images.original;
+
+//         const img = document.createElement('img');
+//         img.src = url;
+//         document.body.appendChild(img);
+
+//     } )
+//     .catch( error => {
+//         console.error(error);
+//     } )
+
+// ======================================================================
+// Seccion 3 => Fetch API
+// ======================================================================
+
+const getImage = async () => {
+
+    const apiKey = 'l8Th4RQ5OLAN5qMc4EViivT4NWPFMOiX';
+    const resp = await fetch(`http://api.giphy.com/v1/gifs/random?api_key=${apiKey}`);
+    const data = await resp.json();
+    const { url } = data.data.images.original;
+
+    let image = document.createElement('img');
+    image.src = url;
+    document.body.appendChild(image);
+
 }
 
-console.log(getHeroeById(1));
+getImage();
