@@ -14,19 +14,7 @@ const CounterApp = ({value}) => {
     //handleReset
     const handleReset = (e) => {
         // setCounter( counter + 1 );
-        setCounter( (C) => {
-
-            let restant;
-
-            if( C > value ) {
-                restant = C - value;
-                return C - restant;
-            }else if( C < value ){
-                restant = value - C;
-                return C + restant;
-            }
-
-        } )
+        setCounter( value );
     }
 
     //handleSubstract
