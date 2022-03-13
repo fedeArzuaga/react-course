@@ -1,40 +1,32 @@
-// request
-//     .then( response => response.json())
-//     .then( ({ data }) => {
 
-//         const {url} = data.images.original
-//         const image = document.createElement('img');
-//         image.src = url;
 
-//         document.body.append(image);
+// const getImagenPromesa = () => new Promise( resolve => resolve('https://ajskdhaskjdhajs.com') )
+// getImagenPromesa().then( console.log );
 
-//         console.log(url);
-
-//     })
-//     .catch( console.warn )
-
-const getImage = async () => {
+const getImagen = async() => {
 
     try {
 
-        const api_key = 'JVbdq172Ie8TKHGMT8iwF29LgmfQmKpu';
+        const apiKey = 'C1khQe3Z7R1W2lfTO9myKeuShdqFYSGC';
+        const resp   = await fetch(`http://api.giphy.com/v1/gifs/random?api_key=${ apiKey }`);
+        const { data } = await resp.json(); 
 
-        const response = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=${api_key}`);
+        const { url } = data.images.original;
 
-        const { data } = await response.json();
+        const img = document.createElement('img');
+        img.src = url;
+        document.body.append( img );
 
-        const {url} = data.images.original
-        const image = document.createElement('img');
-        image.src = url;
-
-        document.body.append(image);
-
-    } catch ( error ) {
-
-        console.error(error);
-
+    } catch (error) {
+        // manejo del error
+        console.error(error)
     }
-
+    
+    
+    
 }
 
-getImage();
+ getImagen();
+
+
+
