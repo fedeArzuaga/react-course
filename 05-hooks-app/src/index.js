@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Layout } from './components/05-useLayoutEffect/Layout';
+import { Memorize } from './components/06-memos/Memorize';
+// import { Layout } from './components/05-useLayoutEffect/Layout';
 // import { FocusScreen } from './components/04-useRef/FocusScreen';
 // import { MultipleCustomHooks } from './components/examples/MultipleCustomHooks';
 // import { FormWithCustomHook } from './components/02-useEffect/FormWithCustomHooks';
@@ -11,6 +12,6 @@ import { Layout } from './components/05-useLayoutEffect/Layout';
 import './index.css';
 
 ReactDOM.render(
-    <Layout />,
+    <Memorize />,
     document.getElementById('root')
 )
