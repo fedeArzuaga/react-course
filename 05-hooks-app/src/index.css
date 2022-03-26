@@ -6,6 +6,10 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
 }
 
+p {
+    color: #fff;
+}
+
 body {
     padding: 80px;
     background: #333;
