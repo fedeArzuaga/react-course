@@ -1,16 +1,23 @@
-html {
-    color: #fff;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: #fff;
-}
-
-p {
+*:not(p) {
     color: #fff;
 }
 
 body {
     padding: 80px;
     background: #333;
+}
+
+p {
+    margin: 0;
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.completed {
+    text-decoration: line-through;
 }
