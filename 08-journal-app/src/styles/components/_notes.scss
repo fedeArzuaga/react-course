@@ -16,7 +16,7 @@
 .notes__form {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 79px);
 }
 
 .notes__title-input,
@@ -45,6 +45,9 @@
 }
 
 .notes__image {
+    margin-left: 20px;
+    margin-bottom: 20px;
+
     img {
         filter: drop-shadow(5px 5px $dark-gray);
     }

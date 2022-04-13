@@ -1,31 +1,59 @@
-import React from 'react'
+import React from 'react';
+import moment from 'moment';
+import { useDispatch } from 'react-redux';
+import { activeNote } from '../../actions/notes';
 
-export const JournalEntry = () => {
+export const JournalEntry = ({ id, date, title, body, url }) => {
+
+    const noteDate = moment(date);
+
+    const dispatch = useDispatch();
+
+    const note = {
+        id,
+        title,
+        body,
+        url,
+        date
+    }
+    
+    const handleEntryClick = () => {
+        dispatch(
+            activeNote( id, note )
+        )
+    }
+
     return (
-        <div className="journal__entry pointer">
+        <div 
+            className="journal__entry pointer"
+            onClick={ handleEntryClick }
+        >
             
-            <div 
-                className="journal__entry-picture"
-                style={{
-                    backgroundSize: 'cover',
-                    backgroundImage: 'url(https://i.pinimg.com/474x/76/4d/59/764d59d32f61f0f91dec8c442ab052c5.jpg)'
-                }}
-            >
+            {
+                url &&
+                    <div 
+                        className="journal__entry-picture"
+                        style={{
+                            backgroundSize: 'cover',
+                            backgroundImage: `url(${url})`
+                        }}
+                    >
 
-            </div>
+                    </div>
+            }
 
             <div className="journal__entry-body">
                 <p className="journal__entry-title">
-                    Un nuevo dia
+                    { title ? title : "Unknown" }
                 </p>
                 <p className="journal__entry-content">
-                    Nonresponder imputation (NRI) methods were used for analysis.                    
+                    { body ? body : "Content not found" }
                 </p>
             </div>
 
             <div className="journal__entry-date-box">
-                <span>Monday</span>
-                <h4>28</h4>
+                <span>{ noteDate.format('dddd') }</span>
+                <h4>{ noteDate.format('do') }</h4>
             </div>
 
         </div>

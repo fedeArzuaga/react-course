@@ -28,8 +28,5 @@ const googleAuthProvider = new GoogleAuthProvider();
 
 export {
     db,
-    GoogleAuthProvider,
-    googleAuthProvider,
-    getAuth,
-    signInWithPopup
+    googleAuthProvider
 }

@@ -13,7 +13,7 @@
     box-shadow: 0 3px $dark-gray;
     border-radius: 2px;
     padding: 20px;
-    width: 250px;
+    width: 300px;
 }
 
 .auth__title {
@@ -53,9 +53,9 @@
 }
 
 .auth__alert-error {
-    background-color: red;
+    background-color: rgb(253, 183, 183);
     border-radius: 5px;
-    color: #fff;
+    color: rgb(192, 27, 27);
     display: flex;
     justify-content: center;
     margin-bottom: 10px;

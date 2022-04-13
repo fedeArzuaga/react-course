@@ -23,11 +23,24 @@
     transition: background-color .3s ease;
 
     &:disabled {
-        background-color: lighten($primary, 20%);
+        &, &:hover {
+            background-color: lighten($primary, 20%);
+        }
     }
 
     &:hover {
         background: darken($primary, 10);
+    }
+
+}
+
+.btn-danger {
+    background: rgb(163, 2, 2);
+    transition: all 0.3s ease;
+    width: 100%;
+
+    &:hover {
+        background: darken(rgb(163, 2, 2), 10%);
     }
 
 }
